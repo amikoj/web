@@ -100,3 +100,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# logs
+log/
+logs/
+LOG/
+LOGS/
