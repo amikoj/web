@@ -1,9 +1,12 @@
+# !/usr/bin/env python
+# -*-encoding:utf-8 -*-
+
 import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
-class config:
+class config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'this is a secret string'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
@@ -29,9 +32,26 @@ class ProductionConfig(config):
     'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 
 
+
+
+
+
+
+
+
+
 config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
     'production': ProductionConfig,
     'default': DevelopmentConfig
 }
+
+
+
+
+
+
+
+
+

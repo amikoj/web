@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]>
-<html class="ie ie6" lang="en">
-<![endif]--><!--[if IE 7 ]>
-<html class="ie ie7" lang="en">
-<![endif]--><!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!-->
-<html lang=en> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <title>404</title>
-    <meta name=author content="pkfrom">
-    <meta name=keywords content="404 page, css3, template, html5 template">
-    <meta name=description content="404 - Page Template">
-    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"> <!-- Libs CSS -->
-    <link type=text/css media=all href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+
+{% extends 'base.html'%}
+
+{% block title %}
+404
+{% endblock %}
+
+{% block keywords%}
+ <meta name=keywords content="404 page, css3, template, html5 template">
+{% endblock %}
+
+{% block head %}
+<link type=text/css media=all href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
           rel="stylesheet">
     <link type=text/css media=all href=/static/css/404.min.css rel="stylesheet"> <!-- Favicons -->
     <link rel=apple-touch-icon sizes=144x144 href="/static/img/favicons/favicon144x144.png">
@@ -23,7 +20,18 @@
     <link rel="shortcut icon" href="/static/img/favicons/favicon.png"> <!-- Google Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel=stylesheet
           type=text/css>
-<body> <!-- Load page -->
+
+{% endblock %}
+
+
+
+
+{% block description %}
+ <meta name=description content="404 - Page Not Found.">
+{% endblock %}
+
+
+{% block main %}
 <div class=animationload>
     <div class=loader></div>
 </div> <!-- End load page --> <!-- Content Wrapper -->
@@ -41,6 +49,17 @@
                 <!--<p>The page you are looking for was moved, removed,<br> renamed or might never existed.</p>--><br>
                 <a href="/" class=btn>Go Home</a> <!--<a href="#" class="btn btn-brown">Contact Us</a>--> </div>
             <!-- end Info --> </div> <!-- End Light version --> </div> <!-- end container --> </div>
+
+
+
+
+
+
+{% endblock %}
+{% block script%}
+
+
+
 <!-- end Content Wrapper --> <!-- Scripts -->
 <script src=https://code.jquery.com/jquery-2.2.0.min.js type=text/javascript></script>
 <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js type=text/javascript></script>
@@ -52,3 +71,4 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+{% endblock %}
