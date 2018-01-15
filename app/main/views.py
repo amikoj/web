@@ -17,3 +17,6 @@ def contact():
     return render_template('contact.html',context=context)
 
 
+@main.route('/courseware.html')
+def courseware():
+    return render_template('courseware.html',context=context)

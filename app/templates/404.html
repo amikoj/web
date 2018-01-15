@@ -32,10 +32,11 @@
 
 
 {% block main %}
-<div class=animationload>
+<main role="main" class="inner cover">
+    <div class=animationload>
     <div class=loader></div>
-</div> <!-- End load page --> <!-- Content Wrapper -->
-<div id=wrapper>
+    </div> <!-- End load page --> <!-- Content Wrapper -->
+    <div id=wrapper>
     <div class=container> <!-- Switcher -->
         <div class=switcher><input id=sw type=checkbox class=switcher-value> <label for=sw class=sw_btn></label>
             <div class=bg></div>
@@ -51,14 +52,12 @@
             <!-- end Info --> </div> <!-- End Light version --> </div> <!-- end container --> </div>
 
 
-
+</main>
 
 
 
 {% endblock %}
-{% block script%}
-
-
+{% block content%}
 
 <!-- end Content Wrapper --> <!-- Scripts -->
 <script src=https://code.jquery.com/jquery-2.2.0.min.js type=text/javascript></script>

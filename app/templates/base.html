@@ -20,9 +20,9 @@
     {% endblock %}
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title> {% block title %} EnjoyToday {% endblock %}</title>
-
-    <!-- Custom styles for this template -->
+        <!-- Custom styles for this template -->
     <link href="{{ url_for('static',filename = 'css/cover.css') }}" rel="stylesheet">
+
 
 
     {% block head %}
@@ -55,17 +55,8 @@
             </div>
           </header>
 
-         <main role="main" class="inner cover">
-              {% block main%}
-            <h1 class="cover-heading">网站正在建设中,更多功能稍候开放...</h1>
-            <p class="lead"></p>
-            <p class="lead">
-              <!--<a href="#" class="btn btn-lg btn-secondary">Learn more</a>-->
-            </p>
-
-               {% endblock %}
-          </main>
-
+            {% block main%}
+            {% endblock %}
 
             {% block footer %}
             <footer class="mastfoot">
@@ -83,7 +74,7 @@
 </div>
 
 
-{% block script%}
+{% block content%}
 
 {% endblock %}
 
