@@ -14,6 +14,8 @@ class PageConfig(object):
     BLOG_DOMAIN = u"http://blog.enjoytoday.cn"
     COURSEWARE_DOMAIN = u"http://www.enjoytoday.cn/courseware.html"
     CONTACT_DOMAIN = u"http://www.enjoytoday.cn/contact.html"
+    MORE_DOMAIN = u'http://www.enjoytoday.cn/more'
+
     WEB_BRAND = u"EnjoyToday"
     HOME_TEXT = u"主页"
     JOURNAL_TEXT = u"日志"
@@ -21,6 +23,7 @@ class PageConfig(object):
     BLOG_TEXT = u"博客"
     COURSEWARE_TEXT = u"课件"
     CONTACT_TEXT = u"联系"
+    MORE_TEXT = u'更多'
     KEYWORDS =["",""]
 
 
@@ -32,6 +35,7 @@ class PageDebugConfig(object):
     BLOG_DOMAIN = u"/blog"
     COURSEWARE_DOMAIN = u"/courseware.html"
     CONTACT_DOMAIN = u"/contact.html"
+    MORE_DOMAIN = u'/more'
     WEB_BRAND = u"EnjoyToday"
     HOME_TEXT = u"主页"
     JOURNAL_TEXT = u"日志"
@@ -39,6 +43,7 @@ class PageDebugConfig(object):
     BLOG_TEXT = u"博客"
     COURSEWARE_TEXT = u"课件"
     CONTACT_TEXT = u"联系"
+    MORE_TEXT = u'更多'
     KEYWORDS = ["", ""]
 
 # context ={'page':PageConfig}

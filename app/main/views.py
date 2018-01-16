@@ -20,3 +20,8 @@ def contact():
 @main.route('/courseware.html')
 def courseware():
     return render_template('courseware.html',context=context)
+
+
+@main.route('/more.html')
+def more():
+    return render_template('more.html',context=context)

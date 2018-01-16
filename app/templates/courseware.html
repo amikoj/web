@@ -8,48 +8,76 @@
 
 
 {% block nav %}
-<nav class="nav nav-masthead">
-    <a class="nav-link" href="{{ context['page'].HOME_DOMAIN }}">{{ context['page'].HOME_TEXT }}</a>
-    <a class="nav-link" href="{{ context['page'].JOURNAL_DOMAIN }}">{{ context['page'].JOURNAL_TEXT }}</a>
-    <a class="nav-link" href="{{ context['page'].HOBBY_DOMAIN }}">{{ context['page'].HOBBY_TEXT }}</a>
-    <a class="nav-link" href="{{ context['page'].BLOG_DOMAIN }}">{{ context['page'].BLOG_TEXT }}</a>
-    <a class="nav-link active" href="{{ context['page'].COURSEWARE_DOMAIN }}">{{ context['page'].COURSEWARE_TEXT }}</a>
-    <a class="nav-link" href="{{ context['page'].CONTACT_DOMAIN }}">{{ context['page'].CONTACT_TEXT }}</a>
-</nav>
+<nav>
+    <ul class="nav nav-pills pull-right">
+        <!--Home -->
+        <li role="presentation" >
+            <a href="{{ context['page'].HOME_DOMAIN }}">{{ context['page'].HOME_TEXT }}</a>
+        </li>
+        <!--JOURNAL -->
+        <li role="presentation">
+            <a href="{{ context['page'].JOURNAL_DOMAIN }}">{{ context['page'].JOURNAL_TEXT }}</a>
+        </li>
+        <!--HOBBY -->
+        <li role="presentation">
+            <a href="{{ context['page'].HOBBY_DOMAIN }}">{{ context['page'].HOBBY_TEXT }}</a>
+        </li>
+        <!--BLOG -->
+        <li role="presentation">
+            <a href="{{ context['page'].BLOG_DOMAIN }}">{{ context['page'].BLOG_TEXT }}</a>
+        </li>
+        <!--COURSEWARE -->
+        <li role="presentation" class="active">
+            <a href="{{ context['page'].COURSEWARE_DOMAIN }}">{{ context['page'].COURSEWARE_TEXT }}</a>
+        </li>
+        <!--CONTACTL -->
+        <li role="presentation">
+            <a href="{{ context['page'].CONTACT_DOMAIN }}">{{ context['page'].CONTACT_TEXT }}</a>
+        </li>
 
+    </ul>
+</nav>
 {% endblock %}
 
 
+
+
+
+{% block header %}
+<div class="jumbotron">
+    <h1>知识库</h1>
+    <p class="lead">用于展示学习各类语言、技能等梳理的知识脉络，包括但不仅限于ppt、html展示、链接博客、日志等.</p>
+    <p><a class="btn btn-lg btn-success" href="/more.html" role="button">了解更多</a></p>
+</div>
+{% endblock %}
+
+
+
 {% block content %}
-<!-- Carousel
-    ================================================== -->
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
-      </div>
+<div class="row marketing">
+        <div class="col-lg-6">
+            <h4>Subheading</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>Safari bug warning!</h2>
-          <p class="text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-      <!-- /END THE FEATURETTES -->
+            <h4>Subheading</h4>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet
+                fermentum.</p>
 
+            <h4>Subheading</h4>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+
+        <div class="col-lg-6">
+            <h4>Subheading</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+            <h4>Subheading</h4>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet
+                fermentum.</p>
+
+            <h4>Subheading</h4>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+</div>
 {% endblock %}
 

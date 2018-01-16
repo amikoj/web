@@ -2,24 +2,46 @@
 
 
 {% block nav %}
-<nav class="nav nav-masthead">
-    <a class="nav-link" href="{{ context['page'].HOME_DOMAIN }}">{{ context['page'].HOME_TEXT }}</a>
-    <a class="nav-link" href="{{ context['page'].JOURNAL_DOMAIN }}">{{ context['page'].JOURNAL_TEXT }}</a>
-    <a class="nav-link" href="{{ context['page'].HOBBY_DOMAIN }}">{{ context['page'].HOBBY_TEXT }}</a>
-    <a class="nav-link" href="{{ context['page'].BLOG_DOMAIN }}">{{ context['page'].BLOG_TEXT }}</a>
-    <a class="nav-link" href="{{ context['page'].COURSEWARE_DOMAIN }}">{{ context['page'].COURSEWARE_TEXT }}</a>
-    <a class="nav-link active" href="{{ context['page'].CONTACT_DOMAIN }}">{{ context['page'].CONTACT_TEXT }}</a>
+<nav>
+    <ul class="nav nav-pills pull-right">
+        <!--Home -->
+        <li role="presentation" >
+            <a href="{{ context['page'].HOME_DOMAIN }}">{{ context['page'].HOME_TEXT }}</a>
+        </li>
+        <!--JOURNAL -->
+        <li role="presentation">
+            <a href="{{ context['page'].JOURNAL_DOMAIN }}">{{ context['page'].JOURNAL_TEXT }}</a>
+        </li>
+        <!--HOBBY -->
+        <li role="presentation">
+            <a href="{{ context['page'].HOBBY_DOMAIN }}">{{ context['page'].HOBBY_TEXT }}</a>
+        </li>
+        <!--BLOG -->
+        <li role="presentation">
+            <a href="{{ context['page'].BLOG_DOMAIN }}">{{ context['page'].BLOG_TEXT }}</a>
+        </li>
+        <!--COURSEWARE -->
+        <li role="presentation">
+            <a href="{{ context['page'].COURSEWARE_DOMAIN }}">{{ context['page'].COURSEWARE_TEXT }}</a>
+        </li>
+        <!--CONTACTL -->
+        <li role="presentation" class="active">
+            <a href="{{ context['page'].CONTACT_DOMAIN }}">{{ context['page'].CONTACT_TEXT }}</a>
+        </li>
+
+    </ul>
 </nav>
-
 {% endblock %}
 
 
-{% block main%}
-<main role="main" class="inner cover">
-    <h1 class="cover-heading">当前模块暂未开放...</h1>
-    <p class="lead"></p>
-    <p class="lead">
-        <!--<a href="#" class="btn btn-lg btn-secondary">Learn more</a>-->
-    </p>
-</main>
+
+
+{% block header %}
+<div class="jumbotron">
+    <h1>EnjoyToday</h1>
+    <p class="lead">当前模块暂未开放...</p>
+    <p><a class="btn btn-lg btn-success" href="/" role="button">返回首页</a></p>
+</div>
 {% endblock %}
+
+
