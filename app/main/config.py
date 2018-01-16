@@ -14,7 +14,7 @@ class PageConfig(object):
     BLOG_DOMAIN = u"http://blog.enjoytoday.cn"
     COURSEWARE_DOMAIN = u"http://www.enjoytoday.cn/courseware.html"
     CONTACT_DOMAIN = u"http://www.enjoytoday.cn/contact.html"
-    MORE_DOMAIN = u'http://www.enjoytoday.cn/more'
+    MORE_DOMAIN = u'http://www.enjoytoday.cn/more.html'
 
     WEB_BRAND = u"EnjoyToday"
     HOME_TEXT = u"主页"
@@ -30,12 +30,12 @@ class PageConfig(object):
 class PageDebugConfig(object):
     # 主页跳转界面
     HOME_DOMAIN = u"/"
-    JOURNAL_DOMAIN = u"/journal"
-    HOBBY_DOMAIN = u"/hobby"
-    BLOG_DOMAIN = u"/blog"
+    JOURNAL_DOMAIN = u"/journal.html"
+    HOBBY_DOMAIN = u"/hobby.html"
+    BLOG_DOMAIN = u"/blog.html"
     COURSEWARE_DOMAIN = u"/courseware.html"
     CONTACT_DOMAIN = u"/contact.html"
-    MORE_DOMAIN = u'/more'
+    MORE_DOMAIN = u'/more.html'
     WEB_BRAND = u"EnjoyToday"
     HOME_TEXT = u"主页"
     JOURNAL_TEXT = u"日志"
@@ -46,5 +46,6 @@ class PageDebugConfig(object):
     MORE_TEXT = u'更多'
     KEYWORDS = ["", ""]
 
-# context ={'page':PageConfig}
-context ={'page':PageDebugConfig}
+
+pageContext ={'page':PageConfig}
+pageDebugContext ={'page':PageDebugConfig}
