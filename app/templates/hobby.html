@@ -13,7 +13,7 @@
             <a href="{{ context['page'].JOURNAL_DOMAIN }}">{{ context['page'].JOURNAL_TEXT }}</a>
         </li>
         <!--HOBBY -->
-        <li role="presentation">
+        <li role="presentation" class="active">
             <a href="{{ context['page'].HOBBY_DOMAIN }}">{{ context['page'].HOBBY_TEXT }}</a>
         </li>
         <!--BLOG -->
@@ -25,7 +25,7 @@
             <a href="{{ url_for(context['page'].COURSEWARE_DOMAIN) }}">{{ context['page'].COURSEWARE_TEXT }}</a>
         </li>
         <!--CONTACTL -->
-        <li role="presentation" class="active">
+        <li role="presentation" >
             <a href="{{ context['page'].CONTACT_DOMAIN }}">{{ context['page'].CONTACT_TEXT }}</a>
         </li>
 
@@ -36,9 +36,9 @@
 
 
 
-{% block header %}
+{% block content %}
 <div class="jumbotron">
-    <h1>EnjoyToday</h1>
+    <h2>EnjoyToday</h2>
     <p class="lead">当前模块暂未开放...</p>
     <p><a class="btn btn-lg btn-success" href="/" role="button">返回首页</a></p>
 </div>

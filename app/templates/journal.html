@@ -9,7 +9,7 @@
             <a href="{{ context['page'].HOME_DOMAIN }}">{{ context['page'].HOME_TEXT }}</a>
         </li>
         <!--JOURNAL -->
-        <li role="presentation">
+        <li role="presentation" class="active">
             <a href="{{ context['page'].JOURNAL_DOMAIN }}">{{ context['page'].JOURNAL_TEXT }}</a>
         </li>
         <!--HOBBY -->
@@ -36,9 +36,9 @@
 
 
 
-{% block header %}
+{% block content %}
 <div class="jumbotron">
-    <h1>EnjoyToday</h1>
+    <h2>EnjoyToday</h2>
     <p class="lead">当前模块暂未开放...</p>
     <p><a class="btn btn-lg btn-success" href="/" role="button">返回首页</a></p>
 </div>

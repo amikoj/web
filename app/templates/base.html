@@ -1,15 +1,23 @@
 <!DOCTYPE html>
+
+
+{% block doc%}
 <html lang="zh-CN">
+
+{% block head%}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,,shrink-to-fit=no">
+
     {% block description %}
     <meta name="description" content="">
     {% endblock %}
+
     {% block keywords %}
     <meta name=keywords content="">
     {% endblock %}
+
     <meta name="author" content="hfcai">
     {% block icon%}
     <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}">
@@ -17,25 +25,35 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title> {% block title %} EnjoyToday {% endblock %}</title>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+
+       <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url_for('static',filename = 'css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+
+    {% block customer_css %}
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static',filename = 'css/jumbotron-narrow.css') }}?v=201801161101" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    {% endblock%}
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    {% block head %}
+    {% block page_head %}
     {% endblock %}
 
 
 </head>
-
+{% endblock %}
 
 {% block body %}
 <body>
 
-<div class="container">
-    <div class="header clearfix">
 
+{% block container %}
+<div class="container">
+
+    {% block header %}
+    <div class="header clearfix">
         {% block nav %}
         <nav>
             <ul class="nav nav-pills pull-right">
@@ -67,13 +85,18 @@
             </ul>
         </nav>
         {% endblock %}
-        <h3 class="text-muted">{{ context['page'].WEB_BRAND }}</h3>
+
+        {% block muted%}
+        <h3 class="text-muted">
+
+            {{ context['page'].WEB_BRAND }}
+        </h3>
+           {% endblock %}
     </div>
 
 
-    {% block header %}
-    <!-- 头部显示-->
-    {% endblock%}
+    {% endblock %}
+
 
     {% block content%}
     <!-- 内容显示-->
@@ -92,7 +115,7 @@
 
 </div>
 
-
+{% endblock %}
 {% block script %}
 
 {% endblock %}
@@ -104,3 +127,4 @@
 {% endblock %}
 
 </html>
+{% endblock %}

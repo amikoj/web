@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 
 
-{% block head %}
+{% block page_head %}
   <!-- Custom styles for this template -->
 <!--<link href="https://v3.bootcss.com/examples/carousel/carousel.css" rel="stylesheet">-->
 {% endblock %}
@@ -41,30 +41,25 @@
 
 
 
+{% block content %}
 
-
-{% block header %}
 <div class="jumbotron">
     <h2>知识库</h2>
     <p class="lead">用于展示学习各类语言、技能等梳理的知识脉络，包括但不仅限于ppt、html展示、链接博客、日志等.</p>
-    <!--<p><a class="btn btn-lg btn-primary" href="/more.html" role="button">了解更多</a></p>-->
+    <p><a class="btn btn-lg btn-primary" href="{{ url_for('share.categorys') }}" role="button">了解更多</a></p>
 </div>
-{% endblock %}
 
-
-
-{% block content %}
-<div class="row marketing">
-    <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="{{ url_for('static',filename='img/kotlin_logo.jpg')}}" alt="...">
-      <div class="caption">
-        <h3>Kotlin </h3>
-        <p> Kotlin 语言基础了解.主要介绍Kotlin的语法规则、使用场景、以及和其他语言作一些简单的比较.</p>
-        <p><a href="#" class="btn btn-primary" role="button">查看详情</a></p>
-      </div>
-    </div>
-  </div>
-</div>
+<!--<div class="row marketing">-->
+    <!--<div class="col-sm-6 col-md-4">-->
+    <!--<div class="thumbnail">-->
+      <!--<img src="{{ url_for('static',filename='img/kotlin_logo.jpg')}}" alt="...">-->
+      <!--<div class="caption">-->
+        <!--<h3>Kotlin </h3>-->
+        <!--<p> Kotlin 语言基础了解.主要介绍Kotlin的语法规则、使用场景、以及和其他语言作一些简单的比较.</p>-->
+        <!--<p><a href="#" class="btn btn-primary" role="button">查看详情</a></p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 {% endblock %}
 
