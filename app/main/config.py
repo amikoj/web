@@ -1,5 +1,5 @@
 # !/usr/bin/env python
-# -*-encoding:utf-8 -*-
+# -*-coding:utf-8-*-
 
 
 class PageConfig(object):
@@ -12,7 +12,7 @@ class PageConfig(object):
     JOURNAL_DOMAIN = u"http://journal.enjoytoday.cn"
     HOBBY_DOMAIN = u"http://hobby.enjoytoday.cn"
     BLOG_DOMAIN = u"http://blog.enjoytoday.cn"
-    COURSEWARE_DOMAIN = u"http://www.enjoytoday.cn/courseware.html"
+    COURSEWARE_DOMAIN = u"http://www.enjoytoday.cn/index.html"
     CONTACT_DOMAIN = u"http://www.enjoytoday.cn/contact.html"
     MORE_DOMAIN = u'http://www.enjoytoday.cn/more.html'
 
@@ -33,7 +33,7 @@ class PageDebugConfig(object):
     JOURNAL_DOMAIN = u"/journal.html"
     HOBBY_DOMAIN = u"/hobby.html"
     BLOG_DOMAIN = u"/blog.html"
-    COURSEWARE_DOMAIN = u"/courseware.html"
+    COURSEWARE_DOMAIN ="share.index"
     CONTACT_DOMAIN = u"/contact.html"
     MORE_DOMAIN = u'/more.html'
     WEB_BRAND = u"EnjoyToday"
@@ -41,7 +41,7 @@ class PageDebugConfig(object):
     JOURNAL_TEXT = u"日志"
     HOBBY_TEXT = u"爱好"
     BLOG_TEXT = u"博客"
-    COURSEWARE_TEXT = u"课件"
+    COURSEWARE_TEXT = u"分享"
     CONTACT_TEXT = u"联系"
     MORE_TEXT = u'更多'
     KEYWORDS = ["", ""]

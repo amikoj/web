@@ -1,5 +1,5 @@
 # !/usr/bin/env python
-# -*-encoding:utf-8 -*-
+# -*-coding:utf-8-*-
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -17,6 +17,10 @@ def create_app(config_name):
     # 注册蓝本
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
+
+    from .share import share as share_blueprint
+    app.register_blueprint(share_blueprint,url_prefix='/share')
+
     return app
 
 
