@@ -56,15 +56,19 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
+                {% block about%}
               <h4 class="text-white">关于</h4>
               <p class="text-muted">本网站是本人学习技术之余将其整理成为一个个单独的知识点,并将其以各种文字、图片格式展示的一个分享类型网站.限于本人技术水平问题，本站所有知识点可能不够全面或者认识偏颇，还望各位多多指出.相关错误可
               通过左侧方式联系告知我,本人不胜感激!</p>
+                {% endblock %}
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">联系我</h4>
               <ul class="list-unstyled">
+                  {% block contact %}
                 <li class="text-white">QQ:1710600212</li>
                 <li class="text-white">邮箱:caihaifei@enjoytoday.cn</li>
+                  {% endblock %}
               </ul>
             </div>
           </div>
@@ -72,8 +76,9 @@
       </div>
       <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
 
+            {% block nav %}
+          <a href="#" class="navbar-brand d-flex align-items-center">
             <svg xmlns="http://www.w3.org/2000/svg"
                  width="20" height="20"
                  viewBox="0 0 24 24"
@@ -87,8 +92,9 @@
               <circle cx="12" cy="13" r="4"></circle>
             </svg>
 
-            <strong>分享</strong>
+            <strong>{% block nav_text %}分享 {% endblock %}</strong>
           </a>
+            {% endblock %}
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -98,69 +104,15 @@
     {% endblock %}
 
     {% block main %}
-
-
     {% endblock %}
 
-
-
-
-    <div class="header clearfix">
-        {% block nav %}
-        <nav>
-            <ul class="nav nav-pills pull-right">
-                <!--Home -->
-                <li role="presentation" class="active">
-                    <a href="{{ context['page'].HOME_DOMAIN }}">{{ context['page'].HOME_TEXT }}</a>
-                </li>
-                <!--JOURNAL -->
-                <li role="presentation">
-                    <a href="{{ context['page'].JOURNAL_DOMAIN }}">{{ context['page'].JOURNAL_TEXT }}</a>
-                </li>
-                <!--HOBBY -->
-                <li role="presentation">
-                    <a href="{{ context['page'].HOBBY_DOMAIN }}">{{ context['page'].HOBBY_TEXT }}</a>
-                </li>
-                <!--BLOG -->
-                <li role="presentation">
-                    <a href="{{ context['page'].BLOG_DOMAIN }}">{{ context['page'].BLOG_TEXT }}</a>
-                </li>
-                <!--COURSEWARE -->
-                <li role="presentation">
-                    <a href="{{ url_for(context['page'].COURSEWARE_DOMAIN) }}">{{ context['page'].COURSEWARE_TEXT }}</a>
-                </li>
-                <!--CONTACTL -->
-                <li role="presentation">
-                    <a href="{{ context['page'].CONTACT_DOMAIN }}">{{ context['page'].CONTACT_TEXT }}</a>
-                </li>
-
-            </ul>
-        </nav>
-        {% endblock %}
-
-        {% block muted%}
-        <h3 class="text-muted">
-
-            {{ context['page'].WEB_BRAND }}
-        </h3>
-        {% endblock %}
-    </div>
-
-
-
-    {% block content%}
-    <!-- 内容显示-->
-    {% endblock %}
-
-
-</div>
-
+ </div>
 {% endblock %}
+
 
 
 {% block footer %}
 <footer class="text-muted">
-
     <div class="container">
         <p>粤ICP备<a href="http://www.miibeian.gov.cn" target="_blank">15100194</a>号 |
             Power By Python <a href="http://flask.pocoo.org/" target="_blank">Flask</a>,
@@ -172,9 +124,6 @@
 {% endblock %}
 
 
-{% block script %}
-
-{% endblock %}
 
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -194,6 +143,12 @@
 <script src="{{ url_for('static',filename = 'js/bootstrap.min.js') }}"></script>
 
 <script src="{{ url_for('static',filename = 'js/holder.min.js') }}"></script>
+
+
+{% block script %}
+
+{% endblock %}
+
 
 </body>
 {% endblock %}
