@@ -21,6 +21,11 @@ def create_app(config_name):
     from .share import share as share_blueprint
     app.register_blueprint(share_blueprint,url_prefix='/share')
 
+    # api
+    from .api import api as api_blueprint
+    app.register_blueprint(api_blueprint,url_prefix='/api/v1.0/')
+
+
     return app
 
 

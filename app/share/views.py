@@ -42,3 +42,7 @@ def topic(category_name,topic_name):
             return render_template('share/topic.html', context=context,category = category,topic = topic)
     return render_template('share/no_found.html',context=context)
 
+
+@share.route('/getlist',methods = ['POST'])
+def getlist():
+    return "{\"status\":101,\"name\":\"hfcai\"}"
