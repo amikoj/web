@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 {% block doc%}
 <html lang="zh-CN">
 
@@ -27,13 +25,13 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
 
-       <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static',filename = 'css/3.3.7/bootstrap.min.css') }}?v=201801161101" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',filename = 'css/4.0/bootstrap.min.css') }}?v=201801161101" rel="stylesheet">
     <link href="{{ url_for('static',filename = 'css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 
     {% block customer_css %}
     <!-- Custom styles for this template -->
-    <link href="{{ url_for('static',filename = 'css/jumbotron-narrow.css') }}?v=201801161101" rel="stylesheet">
+    <link href="{{ url_for('static',filename = 'css/album.css') }}?v=201801161101" rel="stylesheet">
 
     {% endblock%}
 
@@ -53,6 +51,60 @@
 <div class="container">
 
     {% block header %}
+     <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">关于</h4>
+              <p class="text-muted">本网站是本人学习技术之余将其整理成为一个个单独的知识点,并将其以各种文字、图片格式展示的一个分享类型网站.限于本人技术水平问题，本站所有知识点可能不够全面或者认识偏颇，还望各位多多指出.相关错误可
+              通过左侧方式联系告知我,本人不胜感激!</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">联系我</h4>
+              <ul class="list-unstyled">
+                <li class="text-white">QQ:1710600212</li>
+                <li class="text-white">邮箱:caihaifei@enjoytoday.cn</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="20" height="20"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 class="mr-2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 3 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+
+            <strong>分享</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    {% endblock %}
+
+    {% block main %}
+
+
+    {% endblock %}
+
+
+
+
     <div class="header clearfix">
         {% block nav %}
         <nav>
@@ -91,11 +143,9 @@
 
             {{ context['page'].WEB_BRAND }}
         </h3>
-           {% endblock %}
+        {% endblock %}
     </div>
 
-
-    {% endblock %}
 
 
     {% block content%}
@@ -103,19 +153,25 @@
     {% endblock %}
 
 
-    {% block footer %}
-    <footer class="footer">
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+<footer class="text-muted">
+
+    <div class="container">
         <p>粤ICP备<a href="http://www.miibeian.gov.cn" target="_blank">15100194</a>号 |
             Power By Python <a href="http://flask.pocoo.org/" target="_blank">Flask</a>,
             <a href="http://www.bootcss.com/" target="_blank">BootStrap</a> .</p>
         <script type="text/javascript" src="{{ url_for('static',filename = 'js/statistics.js') }}"></script>
         <p></p>
-    </footer>
-    {% endblock %}
-
-</div>
-
+    </div>
+</footer>
 {% endblock %}
+
+
 {% block script %}
 
 {% endblock %}
@@ -123,6 +179,22 @@
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{{ url_for('static',filename = 'js/ie10-viewport-bug-workaround.js') }}"></script>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+<script>
+    window.jQuery || document.write('<script src="{{ url_for('static',filename = 'js/jquery-slim.min.js') }}"><\/script>')
+</script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="{{ url_for('static',filename = 'js/popper.min.js') }}"></script>
+
+<script src="{{ url_for('static',filename = 'js/bootstrap.min.js') }}"></script>
+
+<script src="{{ url_for('static',filename = 'js/holder.min.js') }}"></script>
+
 </body>
 {% endblock %}
 
