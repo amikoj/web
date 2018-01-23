@@ -18,14 +18,15 @@ class ShareCategory(db.Model):
     icon = db.Column(db.String(100),unique =True)
     member_since = db.Column(db.DateTime(),default = datetime.utcnow())
 
+    @property
     def to_json(self):
         json_category = {
-            'auth':self.author,
+            'author':self.author,
             'name':self.name,
             'summary':self.summary,
             'icon':self.icon,
             'member_since':self.member_since,
-            'url':url_for('share.child_category',name = self.name)
+            'url':url_for('share.child_category',name = str(self.name).lower())
         }
         return json_category
 

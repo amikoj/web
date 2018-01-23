@@ -27,9 +27,9 @@ def categorys():
 
 @share.route('/category/<name>')
 def child_category(name):
-    category = ShareCategory.query.filter(name =name).first()
+    category = ShareCategory.query.filter_by(name =name).first()
     if category is None:
-        return render_template('share/category.html',context=context)
+        return render_template('share/no_found.html',context=context, name=name)
     return render_template('share/category.html',context =context,category = category)
 
 

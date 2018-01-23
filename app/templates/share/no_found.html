@@ -1,1 +1,26 @@
 {% extends 'share/base.html' %}
+
+
+{% block description %}
+<meta name="description" content="话题讨论列表">
+{% endblock %}
+
+{% block keywords %}
+<meta name=keywords content="{{name}},topic,category,话题">
+{% endblock %}
+
+
+{% block title %}
+
+{{name}}
+
+{% endblock %}
+
+
+
+{% block main %}
+<div align="center" class="bg-white container" style="height:100%,minHeight:100%">
+<h2 class="text-primary" > 没有发现有关{{ name }} 的话题.</h2>
+
+</div>
+{% endblock %}

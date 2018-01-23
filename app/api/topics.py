@@ -23,7 +23,7 @@ def get_category():
     elif type == "single":
         name = request.args.get('name',"")
         if name is not None and name != "":
-            category = ShareCategory.query.filter(name = name).first()
+            category = ShareCategory.query.filter_by(name = name).first()
             json = category.to_json()
     if json is None:
         json ={
@@ -36,7 +36,7 @@ def get_category():
 @api.route('/addCategory',methods = ['POST'])
 def add_category():
     json = request.json
-    name = json.get("name",None)
+    name = json.get("name", None)
     if name is None:
         return jsonify(
             {
@@ -45,16 +45,16 @@ def add_category():
             }
         )
 
-    category = ShareCategory.query().filter(name = name).first()
-    if category:
+    category = ShareCategory.query.filter_by(name = name).first()
+    if category is None:
         category = ShareCategory(name = name)
 
-    category.author = json.get('author','adm')
+    category.author = json.get("author", "adm")
     category.summary = json.get('summary','Empty Content.')
     category.icon = json.get('icon',"")
     db.session.add(category)
     db.session.commit()
     return jsonify({
         "status":200,
-        "info":category.to_json()
+        "info":category.to_json
     })
