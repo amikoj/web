@@ -2,7 +2,7 @@
 # -*-coding:utf-8-*-
 
 from flask_httpauth import HTTPBasicAuth
-from .erros import unauthorized,forbidden
+from .errors import unauthorized,forbidden
 
 auth = HTTPBasicAuth()
 

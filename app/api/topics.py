@@ -5,7 +5,7 @@ from flask import jsonify,request,g,url_for,current_app
 from .. import db
 from ..models import ShareCategory,Topic
 from . import api
-from .erros import forbidden
+from .errors import forbidden
 
 
 @api.route('/getCategory')
