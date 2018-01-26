@@ -12,7 +12,7 @@ class PageConfig(object):
     JOURNAL_DOMAIN = u"http://journal.enjoytoday.cn"
     HOBBY_DOMAIN = u"http://hobby.enjoytoday.cn"
     BLOG_DOMAIN = u"http://blog.enjoytoday.cn"
-    COURSEWARE_DOMAIN = u"http://www.enjoytoday.cn/index.html"
+    COURSEWARE_DOMAIN = u"share.index"
     CONTACT_DOMAIN = u"http://www.enjoytoday.cn/contact.html"
     MORE_DOMAIN = u'http://www.enjoytoday.cn/more.html'
 
