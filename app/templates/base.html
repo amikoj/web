@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-
-
 {% block doc%}
 <html lang="zh-CN">
-
 {% block head%}
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,,shrink-to-fit=no">
-
     {% block description %}
     <meta name="description" content="">
     {% endblock %}
-
     {% block keywords %}
     <meta name=keywords content="">
     {% endblock %}
-
     <meta name="author" content="hfcai">
     {% block icon%}
     <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}">
@@ -25,86 +20,55 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title> {% block title %} EnjoyToday {% endblock %}</title>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
-
-       <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static',filename = 'css/3.3.7/bootstrap.min.css') }}?v=201801161101" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <script src=" {{ url_for('static',filename='js/3.2.1/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static',filename = 'js/bootstrap.min.js') }}?v=3.7"></script>
+    <link href="{{ url_for('static',filename = 'css/3.3.7/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static',filename = 'css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
-
     {% block customer_css %}
     <!-- Custom styles for this template -->
-    <link href="{{ url_for('static',filename = 'css/jumbotron-narrow.css') }}?v=201801161101" rel="stylesheet">
-
+    <link href="{{ url_for('static',filename = 'css/jumbotron-narrow.css') }}?v=201801161121" rel="stylesheet">
     {% endblock%}
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     {% block page_head %}
     {% endblock %}
-
 
 </head>
 {% endblock %}
 
 {% block body %}
 <body>
-
-
 {% block container %}
 <div class="container">
-
     {% block header %}
+    <hr>
     <div class="header clearfix">
         {% block nav %}
         <nav>
             <ul class="nav nav-pills pull-right">
-                <!--Home -->
-                <li role="presentation" class="active">
-                    <a href="{{ context['page'].HOME_DOMAIN }}">{{ context['page'].HOME_TEXT }}</a>
+                {% for item in config%}
+                <li role="presentation" class="{{ item.name }}">
+                    <a href="{{ url_for(item.endpoint) }}">{{ item.text }}</a>
                 </li>
-                <!--JOURNAL -->
-                <li role="presentation">
-                    <a href="{{ context['page'].JOURNAL_DOMAIN }}">{{ context['page'].JOURNAL_TEXT }}</a>
-                </li>
-                <!--HOBBY -->
-                <li role="presentation">
-                    <a href="{{ context['page'].HOBBY_DOMAIN }}">{{ context['page'].HOBBY_TEXT }}</a>
-                </li>
-                <!--BLOG -->
-                <li role="presentation">
-                    <a href="{{ context['page'].BLOG_DOMAIN }}">{{ context['page'].BLOG_TEXT }}</a>
-                </li>
-                <!--COURSEWARE -->
-                <li role="presentation">
-                    <a href="{{ url_for(context['page'].COURSEWARE_DOMAIN) }}">{{ context['page'].COURSEWARE_TEXT }}</a>
-                </li>
-                <!--CONTACTL -->
-                <li role="presentation">
-                    <a href="{{ context['page'].CONTACT_DOMAIN }}">{{ context['page'].CONTACT_TEXT }}</a>
-                </li>
-
+                {% endfor %}
             </ul>
         </nav>
         {% endblock %}
-
         {% block muted%}
-        <h3 class="text-muted">
-
-            {{ context['page'].WEB_BRAND }}
-        </h3>
-           {% endblock %}
+        <h3 class="text-muted"> EnjoyToday </h3>
+        {% endblock %}
     </div>
 
 
     {% endblock %}
 
-
-    {% block content%}
-    <!-- 内容显示-->
-    {% endblock %}
-
+    <div class="content"><!---->
+        {% block content%}
+        <!-- 内容显示-->
+        {% endblock %}
+    </div>
 
     {% block footer %}
-    <footer class="footer">
+    <footer class="footer navbar-default navbar-fixed-bottom">
         <p>粤ICP备<a href="http://www.miibeian.gov.cn" target="_blank">15100194</a>号 |
             Power By Python <a href="http://flask.pocoo.org/" target="_blank">Flask</a>,
             <a href="http://www.bootcss.com/" target="_blank">BootStrap</a> .</p>
@@ -119,10 +83,9 @@
 {% block script %}
 
 {% endblock %}
-
-
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{{ url_for('static',filename = 'js/ie10-viewport-bug-workaround.js') }}"></script>
+
 </body>
 {% endblock %}
 

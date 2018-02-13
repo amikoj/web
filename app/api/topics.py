@@ -33,7 +33,7 @@ def get_category():
     return jsonify(json)
 
 
-@api.route('/addCategory',methods = ['POST'])
+@api.route('/addCategory', methods=['POST'])
 def add_category():
     json = request.json
     name = json.get("name", None)

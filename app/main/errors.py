@@ -2,9 +2,6 @@
 # -*-coding:utf-8-*-
 from flask import render_template, url_for, request, jsonify
 from . import main
-from app.main.config import *
-
-context = pageContext
 
 
 @main.app_errorhandler(404)
@@ -14,7 +11,7 @@ def page_not_found(e):
         response = jsonify({"error": "not found"})
         response.status_code = 404
         return response
-    return render_template('404.html', context=context), 404
+    return render_template('404.html'), 404
 
 
 @main.app_errorhandler(403)

@@ -1,45 +1,27 @@
 {%extends 'base.html'%}
 
 
-{% block nav %}
-<nav>
-    <ul class="nav nav-pills pull-right">
-        <!--Home -->
-        <li role="presentation" >
-            <a href="{{ context['page'].HOME_DOMAIN }}">{{ context['page'].HOME_TEXT }}</a>
-        </li>
-        <!--JOURNAL -->
-        <li role="presentation" class="active">
-            <a href="{{ context['page'].JOURNAL_DOMAIN }}">{{ context['page'].JOURNAL_TEXT }}</a>
-        </li>
-        <!--HOBBY -->
-        <li role="presentation">
-            <a href="{{ context['page'].HOBBY_DOMAIN }}">{{ context['page'].HOBBY_TEXT }}</a>
-        </li>
-        <!--BLOG -->
-        <li role="presentation">
-            <a href="{{ context['page'].BLOG_DOMAIN }}">{{ context['page'].BLOG_TEXT }}</a>
-        </li>
-        <!--COURSEWARE -->
-        <li role="presentation">
-            <a href="{{ url_for(context['page'].COURSEWARE_DOMAIN) }}">{{ context['page'].COURSEWARE_TEXT }}</a>
-        </li>
-        <!--CONTACTL -->
-        <li role="presentation" class="active">
-            <a href="{{ context['page'].CONTACT_DOMAIN }}">{{ context['page'].CONTACT_TEXT }}</a>
-        </li>
-
-    </ul>
-</nav>
+{% block script %}
+<script>
+    $('li.journal').addClass('active')
+</script>
 {% endblock %}
 
-
-
-
 {% block content %}
-<div class="jumbotron">
-    <h2>EnjoyToday</h2>
-    <p class="lead">当前模块暂未开放...</p>
-    <p><a class="btn btn-lg btn-success" href="/" role="button">返回首页</a></p>
+
+
+<div class="well well-lg">
+    日记的记录并不正式,简单记录一下日常所遇和看的书,生活点滴.有可能有图片,也有可能没图片,可能记一些琐碎知识,以我的个性也就简单写写罢了把！
+
 </div>
+
+
+
+
+
+
+
+
+
+
 {% endblock %}

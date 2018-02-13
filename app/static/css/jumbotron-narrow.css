@@ -3,7 +3,23 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   height: 100%;
+  width: 100%；
+  min-width: 100%;
 
+}
+
+
+/* 在footer之上*/
+.content {
+   padding-bottom:50px;
+}
+
+
+.carousel,
+.well,
+.panel{
+    margin-top:30px;
+    margin-bottom:30px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -14,16 +30,17 @@ body {
   padding-left: 15px;
 }
 
-/* Custom page header */
+/* Custom page header 下划线*/
 .header {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #e5e5e5;
+
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 40px;
+  line-height: 30px;
 }
 
 
@@ -33,12 +50,14 @@ body {
   color: #777;
   font-size: 12px;
   border-top: 1px solid #e5e5e5;
+  text-align: center;
 }
 
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+  /* 增加宽度为适配百分比*/
+    max-width: 80%;
   }
 }
 .container-narrow > hr {
@@ -49,6 +68,7 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+
   height: 100%; /* For at least Firefox */
   min-height: 100%;
 }
@@ -76,7 +96,11 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+
+  .footer{
+    text-align: center;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
