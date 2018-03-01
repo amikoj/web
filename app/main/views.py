@@ -6,13 +6,13 @@ from . import main
 
 config = (
     {
-        "name": "home",
-        "text": "主页",
+        "name": u"home",
+        "text": u"主页",
         "endpoint": "main.index"
     }, 
     {
-        "name": "journal",
-        "text": "日志",
+        "name": u"journal",
+        "text": u"日志",
         "endpoint": "main.journal"
     }, 
     # {
@@ -21,13 +21,13 @@ config = (
     #     "endpoint": "main.hobby"
     # },
     {
-        "name": "blog",
-        "text": "博客",
+        "name": u"blog",
+        "text": u"博客",
         "endpoint": "main.blog"  
     },
     {
-        "name": "share",
-        "text": "分享",
+        "name": u"share",
+        "text": u"分享",
         "endpoint": "main.share"
     }
 )

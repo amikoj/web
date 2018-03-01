@@ -3,75 +3,144 @@
 {% block script %}
 <script>
     $('li.home').addClass('active')
-
 </script>
 {% endblock %}
 
 {% block content%}
-<div id="myCarousel" class="carousel slide">
-    <!-- 轮播（Carousel）指标 -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <!-- 轮播（Carousel）项目 -->
-    <div class="carousel-inner">
-        <div class="item">
-            <img src="http://www.runoob.com/wp-content/uploads/2014/07/slide1.png" class="img-responsive" alt="First slide">
-            <div class="carousel-caption">
-                <a class="text-white">android 开发之旅</a>
-            </div>
-        </div>
-        <div class="item active">
-            <img src="http://www.runoob.com/wp-content/uploads/2014/07/slide2.png" class="img-responsive" alt="Second slide">
-           <div class="carousel-caption">
-                <a class="text-white">kotlin 开发之旅</a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="http://www.runoob.com/wp-content/uploads/2014/07/slide3.png" class="img-responsive" alt="Third slide">
-           <div class="carousel-caption">
-                <a class="text-white">python 开发之旅</a>
-            </div>
-        </div>
-    </div>
-    <!-- 轮播（Carousel）导航 -->
-    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+<!--<div id="myCarousel" class="carousel slide">-->
+<!--<script>-->
+<!--$.ajax({-->
+  <!--url:'http://localhost:8000/v1.0/carousel',-->
+  <!--type:'get',-->
+  <!--cache:'false',-->
+  <!--dataType:'json',-->
+  <!--success:function(data){-->
+
+     <!--$('.carousel-indicators').empty()-->
+     <!--$('.carousel-inner').empty()-->
+     <!--$.each(data,function(index){-->
+         <!--item = data[index]-->
+         <!--imgUrl = item.imgUrl-->
+         <!--targetUrl = item.targetUrl-->
+         <!--title = item.title-->
+
+
+         <!--it = $('<li></li>')-->
+         <!--it.attr('data-target','#myCarousel')-->
+         <!--it.attr('data-slide-to', index)-->
+         <!--if(index==0){-->
+           <!--it.addClass('active')-->
+         <!--}-->
+         <!--$('.carousel-indicators').append(it)-->
+
+
+         <!--carousel_item = $('<div></div>')-->
+         <!--item_img = $('<img></img>')-->
+         <!--item_img.addClass('img-responsive')-->
+         <!--item_img.attr('src',imgUrl)-->
+         <!--carousel_item.append(item_img)-->
+         <!--carousel_caption = $('<div></div>')-->
+         <!--carousel_caption.addClass('carousel-caption')-->
+
+         <!--text = $('<a></a>')-->
+         <!--text.addClass('text-white')-->
+         <!--text.attr('href',targetUrl)-->
+         <!--text.html(title)-->
+         <!--carousel_caption.append(text)-->
+         <!--carousel_item.append(carousel_caption)-->
+         <!--$('.carousel-inner').append(carousel_item)-->
+     <!--})-->
+  <!--}-->
+
+<!--})-->
+
+<!--//调用carousel-->
+<!--$(document).ready(function(){-->
+    <!--$('.carousel').carousel()-->
+<!--})-->
+
+<!--</script>-->
+    <!--&lt;!&ndash; 轮播（Carousel）指标 &ndash;&gt;-->
+    <!--<ol class="carousel-indicators">-->
+        <!--<li data-target="#myCarousel" data-slide-to="0"></li>-->
+        <!--<li data-target="#myCarousel" data-slide-to="1" class="active"></li>-->
+        <!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
+    <!--</ol>-->
+    <!--&lt;!&ndash; 轮播（Carousel）项目 &ndash;&gt;-->
+    <!--<div class="carousel-inner">-->
+        <!--<div class="item">-->
+            <!--<img src="http://www.runoob.com/wp-content/uploads/2014/07/slide1.png" class="img-responsive" alt="First slide">-->
+            <!--<div class="carousel-caption">-->
+                <!--<a class="text-white">android 开发之旅</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="item active">-->
+            <!--<img src="http://www.runoob.com/wp-content/uploads/2014/07/slide2.png" class="img-responsive" alt="Second slide">-->
+           <!--<div class="carousel-caption">-->
+                <!--<a class="text-white">kotlin 开发之旅</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="item">-->
+            <!--<img src="http://www.runoob.com/wp-content/uploads/2014/07/slide3.png" class="img-responsive" alt="Third slide">-->
+           <!--<div class="carousel-caption">-->
+                <!--<a class="text-white">python 开发之旅</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash; 轮播（Carousel）导航 &ndash;&gt;-->
+    <!--<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>-->
+    <!--<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>-->
+<!--</div>-->
+
+<div class="description">
+
+
+<style type="text/css">
+    .description{
+        padding-left:10%;
+        padding-right:10%;
+        padding-top:80px;
+        font-size:18px;
+    }
+    p {
+       text-indent: 2em;
+    }
+
+
+</style>
+    <p> 这里是蔡海飞的个人主页.2015年毕业于安徽新华学院信息管理与信息系统专业,
+        目前从事android开发方向工作,喜欢学习新的技术和结交新的朋友,乐意分享生活的点点滴滴,
+        当然你也可以认为我是因为死宅死宅的原因渴望结交朋友.
+    </p>
+    <p>
+        希望在我的网站你能有所收获,这将是我最大的收获.虽然小子我文笔不咋的、技术不咋的、长的不咋的,但我还是需要折腾折腾,
+        毕竟生命在于不断折腾,越折腾越欢快！
+    </p>
+
 </div>
 
 
-<script>
-//调用carousel
-$(document).ready(function(){
-    $('.carousel').carousel()
-})
 
-</script>
+<!--<div class="panel  panel-primary">-->
+    <!--<div class="panel-heading">推荐阅读</div>-->
+    <!--<div class="panel-body text-muted">-->
+        <!--根据文章的发布顺序和话题的新鲜度酌情对文章进行推荐,可根据兴趣进行阅览.文章的类型不唯一，-->
+        <!--可能是自恋日记、粗浅博客、技术资料分享又或者是一个有趣的链接分享也不一定,可能一定程度上真的取决于我个人的喜好.反正个人网站就是可着劲折腾！-->
+    <!--</div>-->
 
-
-<div class="panel  panel-primary">
-    <div class="panel-heading">推荐阅读</div>
-    <div class="panel-body text-muted">
-        根据文章的发布顺序和话题的新鲜度酌情对文章进行推荐,可根据兴趣进行阅览.文章的类型不唯一，
-        可能是自恋日记、粗浅博客、技术资料分享又或者是一个有趣的链接分享也不一定,可能一定程度上真的取决于我个人的喜好.反正个人网站就是可着劲折腾！
-    </div>
-
-    <ul class="list-group">
-        <li class="list-group-item">免费域名注册</li>
-        <li class="list-group-item">免费 Window 空间托管</li>
-        <li class="list-group-item">图像的数量</li>
-        <li class="list-group-item">24*7 支持</li>
-        <li class="list-group-item">每年更新成本</li>
-
-        <li class="list-group-item">免费域名注册</li>
-        <li class="list-group-item">免费 Window 空间托管</li>
-        <li class="list-group-item">图像的数量</li>
-        <li class="list-group-item">24*7 支持</li>
-        <li class="list-group-item">每年更新成本</li>
-    </ul>
-</div>
+    <!--<ul class="list-group">-->
+        <!--<li class="list-group-item">免费域名注册</li>-->
+        <!--<li class="list-group-item">免费 Window 空间托管</li>-->
+        <!--<li class="list-group-item">图像的数量</li>-->
+        <!--<li class="list-group-item">24*7 支持</li>-->
+        <!--<li class="list-group-item">每年更新成本</li>-->
+        <!--<li class="list-group-item">免费域名注册</li>-->
+        <!--<li class="list-group-item">免费 Window 空间托管</li>-->
+        <!--<li class="list-group-item">图像的数量</li>-->
+        <!--<li class="list-group-item">24*7 支持</li>-->
+        <!--<li class="list-group-item">每年更新成本</li>-->
+    <!--</ul>-->
+<!--</div>-->
 
 
 <div>
