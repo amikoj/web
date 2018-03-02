@@ -1,86 +1,210 @@
 {% extends 'base.html' %}
 
+
 {% block script %}
 <script>
     $('li.blog').addClass('active')
+</script>
+
+<script src="{{ url_for('static',filename = 'js/feather.min.js') }}"></script>
+<script>
+      feather.replace()
 </script>
 {% endblock %}
 
 {% block content %}
 <div class="well well-lg">
-  子曰：“三人行，必有我师焉。择其善者而从之，其不善者而改之。”
+    子曰：“三人行，必有我师焉。择其善者而从之，其不善者而改之。”
 </div>
 
 
 <div class="article-list">
-<style type="text/css">
+    <style type="text/css">
       .item{
-         margin-top:8em;
-         margin-bottom:5em
+         margin-top:3em;
+         margin-bottom:12em;
       }
       .title{
-        font-size:1.5em;
-        color:#0000ff;
+        font-size:1.6em;
+        color:#000;
         text-indent: 0em;
         font-weight:bold;
       }
-      .author{
+      .article-info{
           font-size:1em;
-          float:right;
+          text-align:center;
+          float:left;
           color:black;
-
+          color: #999;
+          text-indent: 0.2em;
       }
       .description{
         font-size:1.2em;
-        color:gray;
-        text-indent: 0em;
+        color: #999;
         font-weight: normal;
-        margin-top: 2em;
-        margin-bottom: 1em;
+        float:left;
       }
-
-</style>
-
-    <div class="item">
-        <p class="title">Android 开发的标题</p>
-        <span class="glyphicon glyphicon-search author" aria-hidden="true"></span>
-        <p class="description">
-            这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em,这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em
-            这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em,这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em
-        </p>
-
-        <p>
-
-        </p>
+      .continue-read{
+        font-size:1.2em;
+        float:right;
 
 
-    </div>
+      }
+      .feather {
+        width: 16px;
+        height: 16px;
+        vertical-align: text-bottom;
+        margin-right: 4px;
+        color: #999;
+       }
+    </style>
+
+    <script>
+
+        $.ajax({
+           url:"http://localhost:8000/v1.0/article?type=all",
+           type:'get',
+           cache:false ,
+           dataType:'json',
+           contentType:'application/json',
+           success:function(data){
+              articles = data.articles
+
+              $.each(articles,function(index){
+                article = articles[index]
+
+                //具体的文章内容
+                item = $('<div></div>')
+                item.addClass('item')
+                title_p = $('<p></p>')
+                title = $('<a></a>')
+                title.attr('href','#')    //通过article_id来访问
+                title.addClass('title')
+                title.html(article.title)
+                title_p.append(title)
+
+                item.append(title_p)
+
+                article_info = $('<p></p>')
+                article_info.addClass('article-info')
 
 
+                span_clock = $('<span></span>')
+                span_clock.attr('data-feather','clock')
+
+                article_info.append(span_clock)
+                span_clock.after(article.release_date+"&nbsp; &nbsp;")
+
+                span_edit = $('<span></span>')
+                span_edit.attr('data-feather','edit')
+
+                article_info.append(span_edit)
+                span_edit.after(article.author+"&nbsp; &nbsp;")
+
+                span_overview = $('<span></span>')
+                span_overview.attr('data-feather','book-open')
+                article_info.append(span_overview)
+                // span_overview.after(article.views+"&nbsp; &nbsp;")
+                span_overview.after("1,234&nbsp; &nbsp;")
+                item.append(article_info)
+
+
+                description = $('<p></p>')
+                description.addClass('description')
+                description.html('这里是文章的简单介绍,文字的类型为gray浅色')
+                item.append(description)
+
+                more_link = $('<p></p>')
+                more_link.addClass('continue-read')
+
+
+                more_href = $('<a></a>')
+                more_href.attr('href','#')         //链接文章的地址，以article_id作为索引
+
+                more_link.append(more_href)
+                more_span = $('<span></span>')
+                more_span.attr('data-feather','arrow-left')
+                more_href.append(more_span)
+                more_span.after('&nbsp;继续阅读')
+                item.append(more_link)
+                $('.article-list').append(item)
+
+
+              })
+
+
+
+           }
+        })
+
+
+    </script>
+
+    <!--<div class="item">-->
+        <!--<p>-->
+            <!--<a href="#" class="title"> Android 开发的标题 </a>-->
+        <!--</p>-->
+        <!--<p class="article-info">-->
+            <!--<span data-feather="clock"></span> 2018年3月2日&nbsp; &nbsp;-->
+            <!--<span data-feather="edit"></span>hfcai&nbsp; &nbsp;-->
+            <!--<span data-feather="book-open"></span>1,234&nbsp; &nbsp;-->
+        <!--</p>-->
+        <!--<p class="description">-->
+            <!--这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em,这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em-->
+            <!--这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em,这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em-->
+            <!--...-->
+        <!--</p>-->
+        <!--<p class="continue-read">-->
+            <!--<a href="#">-->
+                <!--<i data-feather="arrow-left" a></i>&nbsp;继续阅读-->
+            <!--</a>-->
+        <!--</p>-->
+    <!--</div>-->
+
+
+      <!--<div class="item">-->
+        <!--<p>-->
+            <!--<a href="#" class="title"> Android 开发的标题 </a>-->
+        <!--</p>-->
+        <!--<p class="article-info">-->
+            <!--<span data-feather="clock"></span> 2018年3月2日&nbsp; &nbsp;-->
+            <!--<i data-feather="edit"></i>hfcai&nbsp; &nbsp;-->
+            <!--<i data-feather="book-open"></i>1,234&nbsp; &nbsp;-->
+        <!--</p>-->
+        <!--<p class="description">-->
+            <!--这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em,这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em-->
+            <!--这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em,这里是文章的简单介绍,文字的类型为gray浅色,字号设置为1em,设置与标题间隔2em,与底部间隔为1em-->
+            <!--...-->
+        <!--</p>-->
+        <!--<p class="continue-read">-->
+            <!--<a href="#">-->
+                <!--<span data-feather="arrow-left"></span>&nbsp;继续阅读-->
+            <!--</a>-->
+        <!--</p>-->
+    <!--</div>-->
 
 
 </div>
 
 
-
 <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
 </nav>
 
 {% endblock %}
