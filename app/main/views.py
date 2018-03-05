@@ -73,4 +73,6 @@ def share():
     return render_template('share.html', config=config)
 
 
-
+@main.route('/vita.html')
+def vita():
+    return render_template('vita.html')
